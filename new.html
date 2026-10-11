@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TARANG Registration</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        #banner {
+            text-align: center;
+            background-color: rgb(207, 58, 244);
+            color: rgb(240, 247, 253);
+            padding: 25px;
+            
+            
+            
+        }
+
+        #banner h1 {
+            font-size: 28px;
+        }
+
+        #banner h2 {
+            font-size: 35px;
+        }
+
+        #details {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        #event_details,
+        #reg {
+            background-color: white;
+            width: 400px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        #event_details h1,
+        #reg h1 {
+            color: purple;
+        }
+
+        .event {
+            background-color: #eee6ff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        .event h3 {
+            color: rgb(103, 13, 103);
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        .gender {
+            width: auto;
+        }
+
+        .gender-label {
+            display: inline;
+            font-weight: normal;
+            margin-right: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: rgb(35, 3, 35);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        
+            
+        }
+
+        button:hover {
+            background-color: darkviolet;
+        }
+
+        #message {
+            display: none;
+            color: green;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #ac0f0f;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 700px) {
+
+            #details {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+
+            #event_details,
+            #reg {
+                width: 100%;
+                max-width: 500px;
+            }
+
+            #banner h1 {
+                font-size: 22px;
+            }
+
+            #banner h2 {
+                font-size: 30px;
+            }
+        }
+        @keyframes desk
+        {
+            0%{
+                transform:scale(1);
+            }
+            100%{
+                transform:scale(1.5);
+            }
+        }
+        keyframes mob
+        {
+         0%{
+            opacity:0;
+         }
+         100%{
+            opacity: 50;
+         }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="banner">
+        <h1>Sree Saraswathi Thyagaraja College | Pollachi</h1>
+        <h2>TARANG</h2>
+        <p>Inter College Event - 04/11/2026</p>
+    </div>
+
+    <div id="details">
+
+        <div id="event_details">
+
+            <h1>Event Details</h1>
+
+            <div class="event">
+                <h3>Singing</h3>
+                <p>Show your singing talent in the event.</p>
+            </div>
+
+            <div class="event">
+                <h3>Dancing</h3>
+                <p>Show your dancing skills and talent.</p>
+            </div>
+
+            <div class="event">
+                <h3>Quiz</h3>
+                <p>Test your knowledge and answer interesting questions.</p>
+            </div>
+
+            <div class="event">
+                <h3>Drama</h3>
+                <p>Show your acting and creative skills.</p>
+            </div>
+
+        </div>
+
+
+        <div id="reg">
+
+            <h1>Registration</h1>
+
+            <form id="registrationForm">
+
+                <label>Name</label>
+                <input type="text" placeholder="Enter your name" required>
+
+
+                <label>Department</label>
+                <input type="text" placeholder="Enter your department" required>
+
+
+                <label>College Name</label>
+                <input type="text" placeholder="Enter your college name" required>
+
+
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email" required>
+
+
+                <label>Phone Number</label>
+                <input type="tel" placeholder="Enter phone number" maxlength="10" required>
+
+
+                <label>Gender</label>
+
+                <input class="gender" type="radio" name="gender" required>
+                <label class="gender-label">Male</label>
+
+                <input class="gender" type="radio" name="gender">
+                <label class="gender-label">Female</label>
+
+                <input class="gender" type="radio" name="gender">
+                <label class="gender-label">Others</label>
+
+
+                <hr>
+
+                <h2>Event Details</h2>
+
+                <label>Select Event</label>
+
+                <select required>
+                    <option value="">-- Select Event --</option>
+                    <option>Singing</option>
+                    <option>Dancing</option>
+                    <option>Quiz</option>
+                    <option>Drama</option>
+                </select>
+
+
+                <button type="submit">Submit</button>
+
+                <p id="message">Registration Successful!</p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        <p>© 2026 TARANG - Sree Saraswathi Thyagaraja College</p>
+    </footer>
+
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            document.getElementById("message").style.display = "block";
+
+        });
+    </script>
+
+</body>
+</html>
+
